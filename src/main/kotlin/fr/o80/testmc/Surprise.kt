@@ -2,6 +2,7 @@ package fr.o80.testmc
 
 import com.mojang.brigadier.context.CommandContext
 import fr.o80.testmc.actions.FakeHelloSurpriseAction
+import fr.o80.testmc.actions.GiveSomethingSurpriseAction
 import fr.o80.testmc.actions.TeleportSurpriseAction
 import net.minecraft.server.command.ServerCommandSource
 import org.slf4j.LoggerFactory
@@ -12,6 +13,7 @@ import kotlin.concurrent.scheduleAtFixedRate
 private val actions = listOf(
     FakeHelloSurpriseAction(),
     TeleportSurpriseAction(),
+    GiveSomethingSurpriseAction()
 )
 
 object Surprise {
