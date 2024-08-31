@@ -8,7 +8,7 @@ import fr.o80.testmc.getRandomPlayerName
 import net.minecraft.server.command.ServerCommandSource
 import org.slf4j.LoggerFactory
 
-class FakeHelloSurpriseAction : SurpriseAction() {
+class FakeHelloSurpriseAction : SurpriseAction {
 
     private val logger = LoggerFactory.getLogger(this::class.java)
 

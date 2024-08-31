@@ -3,6 +3,7 @@ package fr.o80.testmc.actions
 import com.mojang.brigadier.context.CommandContext
 import fr.o80.testmc.SurpriseAction
 import fr.o80.testmc.executeAsServer
+import fr.o80.testmc.getRandomPlayer
 import fr.o80.testmc.getRandomPlayerName
 import net.minecraft.item.Item
 import net.minecraft.item.Items
@@ -67,13 +68,15 @@ private val items = listOf<Pair<Item, IntProgression>>(
     Items.FIREWORK_ROCKET to (10..20),
 )
 
-class GiveSomethingSurpriseAction : SurpriseAction() {
+class GiveSomethingSurpriseAction : SurpriseAction {
 
     private val logger = LoggerFactory.getLogger(this::class.java)
 
     override fun execute(context: CommandContext<ServerCommandSource>) {
         val player = context.getRandomPlayerName()
         val (item, quantityRange) = items.random()
+
+        context.getRandomPlayer()?.pos
 
         val x = Random.nextInt((quantityRange.last - quantityRange.first) / quantityRange.step)
         val quantity = quantityRange.first + (x * quantityRange.step)

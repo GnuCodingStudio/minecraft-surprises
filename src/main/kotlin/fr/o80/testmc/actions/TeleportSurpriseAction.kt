@@ -8,7 +8,7 @@ import fr.o80.testmc.sayAsServer
 import net.minecraft.server.command.ServerCommandSource
 import org.slf4j.LoggerFactory
 
-class TeleportSurpriseAction : SurpriseAction() {
+class TeleportSurpriseAction : SurpriseAction {
 
     private val logger = LoggerFactory.getLogger(this::class.java)
 
