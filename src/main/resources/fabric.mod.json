@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "test-mc",
+  "version": "${version}",
+  "name": "test-mc",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/test-mc/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "fr.o80.testmc.TestMC"
+    ]
+  },
+  "mixins": [
+    "test-mc.mixins.json",
+    {
+      "config": "test-mc.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
