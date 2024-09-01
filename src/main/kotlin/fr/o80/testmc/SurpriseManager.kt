@@ -2,6 +2,7 @@ package fr.o80.testmc
 
 import com.mojang.brigadier.context.CommandContext
 import fr.o80.testmc.surprise.FakeHelloSurprise
+import fr.o80.testmc.surprise.GiveOrTakeExperienceSurprise
 import fr.o80.testmc.surprise.GiveSomethingSurprise
 import fr.o80.testmc.surprise.KickPlayersSurprise
 import fr.o80.testmc.surprise.SummonSurprise
@@ -17,7 +18,8 @@ private val actions = listOf(
     TeleportSurprise(),
     GiveSomethingSurprise(),
     SummonSurprise(),
-    KickPlayersSurprise(maxPlayersToKick = 2)
+    KickPlayersSurprise(maxPlayersToKick = 2),
+    GiveOrTakeExperienceSurprise(),
 )
 
 object SurpriseManager {
