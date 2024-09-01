@@ -1,14 +1,14 @@
-package fr.o80.testmc.actions
+package fr.o80.testmc.surprise
 
 import com.mojang.brigadier.context.CommandContext
-import fr.o80.testmc.SurpriseAction
+import fr.o80.testmc.Surprise
 import fr.o80.testmc.executeAsServer
 import fr.o80.testmc.getRandomPlayers
 import fr.o80.testmc.sayAsServer
 import net.minecraft.server.command.ServerCommandSource
 import org.slf4j.LoggerFactory
 
-class TeleportSurpriseAction : SurpriseAction {
+class TeleportSurprise : Surprise {
 
     private val logger = LoggerFactory.getLogger(this::class.java)
 

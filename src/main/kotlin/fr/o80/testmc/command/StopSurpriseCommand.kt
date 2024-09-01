@@ -3,14 +3,14 @@ package fr.o80.testmc.command
 import com.mojang.brigadier.Command
 import com.mojang.brigadier.context.CommandContext
 import fr.o80.testmc.StopResponse
-import fr.o80.testmc.Surprise
+import fr.o80.testmc.SurpriseManager
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.Text
 
 class StopSurpriseCommand : Command<ServerCommandSource> {
 
     override fun run(context: CommandContext<ServerCommandSource>): Int {
-        val stopResponse = Surprise.stop()
+        val stopResponse = SurpriseManager.stop()
 
         when (stopResponse) {
             StopResponse.STOPPED -> {

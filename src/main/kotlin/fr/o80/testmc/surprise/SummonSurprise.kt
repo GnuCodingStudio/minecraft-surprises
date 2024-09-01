@@ -1,7 +1,7 @@
-package fr.o80.testmc.actions
+package fr.o80.testmc.surprise
 
 import com.mojang.brigadier.context.CommandContext
-import fr.o80.testmc.SurpriseAction
+import fr.o80.testmc.Surprise
 import fr.o80.testmc.executeAsServer
 import fr.o80.testmc.getRandomPlayer
 import net.minecraft.server.command.ServerCommandSource
@@ -20,7 +20,7 @@ private val mobs = listOf(
     "sheep" to listOf(Vec3i(5, 2, 5), Vec3i(5, 2, -5), Vec3i(-5, 2, -5), Vec3i(-5, 2, 5)),
 )
 
-class SummonSurpriseAction : SurpriseAction {
+class SummonSurprise : Surprise {
 
     val logger = LoggerFactory.getLogger(this::class.java)
 

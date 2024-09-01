@@ -1,7 +1,7 @@
-package fr.o80.testmc.actions
+package fr.o80.testmc.surprise
 
 import com.mojang.brigadier.context.CommandContext
-import fr.o80.testmc.SurpriseAction
+import fr.o80.testmc.Surprise
 import fr.o80.testmc.executeAsServer
 import fr.o80.testmc.getRandomPlayer
 import fr.o80.testmc.getRandomPlayerName
@@ -68,7 +68,7 @@ private val items = listOf<Pair<Item, IntProgression>>(
     Items.FIREWORK_ROCKET to (10..20),
 )
 
-class GiveSomethingSurpriseAction : SurpriseAction {
+class GiveSomethingSurprise : Surprise {
 
     private val logger = LoggerFactory.getLogger(this::class.java)
 

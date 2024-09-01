@@ -3,7 +3,7 @@ package fr.o80.testmc.command
 import com.mojang.brigadier.Command
 import com.mojang.brigadier.context.CommandContext
 import fr.o80.testmc.StartResponse
-import fr.o80.testmc.Surprise
+import fr.o80.testmc.SurpriseManager
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.Text
 import kotlin.time.Duration
@@ -14,7 +14,7 @@ class StartSurpriseCommand(
 ) : Command<ServerCommandSource> {
 
     override fun run(context: CommandContext<ServerCommandSource>): Int {
-        val startSurpriseResult = Surprise.start(
+        val startSurpriseResult = SurpriseManager.start(
             delay = delay.inWholeMilliseconds,
             millisInterval = millisInterval.inWholeMilliseconds,
             context
