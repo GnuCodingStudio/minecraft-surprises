@@ -3,6 +3,7 @@ package fr.o80.testmc
 import com.mojang.brigadier.context.CommandContext
 import fr.o80.testmc.surprise.FakeHelloSurprise
 import fr.o80.testmc.surprise.GiveSomethingSurprise
+import fr.o80.testmc.surprise.KickPlayersSurprise
 import fr.o80.testmc.surprise.SummonSurprise
 import fr.o80.testmc.surprise.TeleportSurprise
 import net.minecraft.server.command.ServerCommandSource
@@ -16,6 +17,7 @@ private val actions = listOf(
     TeleportSurprise(),
     GiveSomethingSurprise(),
     SummonSurprise(),
+    KickPlayersSurprise(maxPlayersToKick = 2)
 )
 
 object SurpriseManager {

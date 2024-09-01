@@ -8,7 +8,6 @@ import fr.o80.testmc.getRandomPlayerName
 import net.minecraft.item.Item
 import net.minecraft.item.Items
 import net.minecraft.server.command.ServerCommandSource
-import org.slf4j.LoggerFactory
 import kotlin.random.Random
 
 private val items = listOf<Pair<Item, IntProgression>>(
@@ -69,8 +68,6 @@ private val items = listOf<Pair<Item, IntProgression>>(
 )
 
 class GiveSomethingSurprise : Surprise {
-
-    private val logger = LoggerFactory.getLogger(this::class.java)
 
     override fun execute(context: CommandContext<ServerCommandSource>) {
         val player = context.getRandomPlayerName()

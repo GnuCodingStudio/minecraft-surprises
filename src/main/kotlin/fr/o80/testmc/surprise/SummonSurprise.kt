@@ -6,7 +6,6 @@ import fr.o80.testmc.executeAsServer
 import fr.o80.testmc.getRandomPlayer
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.util.math.Vec3i
-import org.slf4j.LoggerFactory
 import kotlin.math.roundToInt
 
 private val mobs = listOf(
@@ -21,8 +20,6 @@ private val mobs = listOf(
 )
 
 class SummonSurprise : Surprise {
-
-    val logger = LoggerFactory.getLogger(this::class.java)
 
     override fun execute(context: CommandContext<ServerCommandSource>) {
         val player = context.getRandomPlayer() ?: return

@@ -6,11 +6,8 @@ import fr.o80.testmc.executeAsServer
 import fr.o80.testmc.getRandomPlayers
 import fr.o80.testmc.sayAsServer
 import net.minecraft.server.command.ServerCommandSource
-import org.slf4j.LoggerFactory
 
 class TeleportSurprise : Surprise {
-
-    private val logger = LoggerFactory.getLogger(this::class.java)
 
     override fun execute(context: CommandContext<ServerCommandSource>) {
         val players = context.getRandomPlayers()
