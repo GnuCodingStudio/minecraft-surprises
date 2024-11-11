@@ -1,0 +1,47 @@
+# Surprises Mod for Minecraft
+
+## ROADMAP
+
+- Add more lore when executing commands
+  - [ ] Kick: "L'un d'entre vous n'a pas assez facturé, nous avons du nous en séparer."
+- Add more surprises
+  - [ ] Donner un effet de potion
+    - Bonus :
+      - Commande : /effect give @a speed 60 2
+      - Effet : Donne un effet de vitesse (Speed II) à tous les joueurs pendant 60 secondes.
+    - Malus :
+      - Commande : /effect give @r slowness 60 1
+      - Effet : Donne un effet de lenteur (Slowness I) à un joueur aléatoire pendant 60 secondes.
+  - [ ] Téléportation aléatoire
+    - Commande : /spreadplayers ~ ~ 10 50 @a
+    - Effet : Téléporte tous les joueurs dans un rayon aléatoire autour d’une position donnée (ici le centre de la carte), ce qui peut désorienter tout le monde.
+  - [ ] Changer la gravité
+    - Commande : /effect give @a levitation 10 1
+    - Effet : Donne un effet de lévitation (Levitation I) à tous les joueurs pendant 10 secondes, les faisant flotter dans les airs.
+  - [ ] Modifier la difficulté
+    - Commande : /difficulty hard
+    - Effet : Augmente la difficulté du jeu, rendant les mobs plus forts et les défis plus intenses.
+  - [ ] Explosion contrôlée
+    - Commande : /summon tnt ~ ~ ~ {Fuse:40}
+    - Effet : Fait apparaître une TNT avec un temps de détonation de 2 secondes près d’un joueur aléatoire.
+  - [ ] Donner de la faim
+    - Commande : /effect give @r hunger 60 1
+    - Effet : Applique un effet de faim à un joueur aléatoire pendant 60 secondes.
+  - [ ] nverser les commandes
+    - Commande : /effect give @a nausea 30 1
+    - Effet : Donne un effet de nausée (Nausea I) à tous les joueurs pendant 30 secondes, brouillant leur vision.
+  - [ ] Pluie de flèches
+    - Commande : /execute at @r run summon arrow ~ ~10 ~ {Motion:[0.0,-5.0,0.0]}
+    - Effet : Fait pleuvoir une flèche depuis le ciel juste au-dessus d’un joueur aléatoire. Peut être répétée plusieurs fois pour un effet dramatique.
+  - [ ] Échange d’inventaire
+    - Commande : Utilise /clear, /give, et /replaceitem pour simuler un échange d’inventaire entre deux joueurs.
+    - Effet : Permute les inventaires de deux joueurs aléatoires, créant la surprise et des situations amusantes.
+  - [ ] Rendre le sol glissant
+    - Commande : /effect give @a minecraft:slowness 60 100 true
+    - Effet : Applique un effet de lenteur extrême, ce qui rend le déplacement presque impossible, comme si le sol était devenu glacé.
+  - [ ] Fausse mort
+    - Commande : /effect give @r minecraft:wither 2 1
+    - Effet : Applique un effet Wither à un joueur aléatoire pour lui faire croire qu’il va mourir, mais l’effet est très court.
+  - [ ] Coffres surprises
+    - Commande : /give @p minecraft:chest 1
+    - Effet : Donne à un joueur un coffre qui contient des objets aléatoires, bons ou mauvais.
