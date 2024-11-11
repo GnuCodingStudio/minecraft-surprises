@@ -1,14 +1,14 @@
-package fr.o80.testmc
+package fr.o80.mcsurprises
 
-import fr.o80.testmc.command.StartSurpriseCommand
-import fr.o80.testmc.command.StopSurpriseCommand
-import fr.o80.testmc.command.TestCommand
+import fr.o80.mcsurprises.command.StartSurpriseCommand
+import fr.o80.mcsurprises.command.StopSurpriseCommand
+import fr.o80.mcsurprises.command.TestCommand
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
 import net.minecraft.server.command.CommandManager.literal
 import kotlin.time.Duration.Companion.seconds
 
-class TestMC : ModInitializer {
+class McSurprises : ModInitializer {
 
     override fun onInitialize() {
         CommandRegistrationCallback.EVENT.register { dispatcher, registryAccess, environment ->

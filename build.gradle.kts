@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.0.20"
-    id("fabric-loom") version "1.7.1"
+    kotlin("jvm") version "2.0.21"
+    id("fabric-loom") version "1.8.12"
     id("maven-publish")
 }
 
@@ -23,16 +23,6 @@ java {
     withSourcesJar()
 }
 
-loom {
-    splitEnvironmentSourceSets()
-
-    mods {
-        register("test-mc") {
-            sourceSet("main")
-            sourceSet("client")
-        }
-    }
-}
 
 repositories {
     // Add repositories to retrieve artifacts from in here.
@@ -49,7 +39,6 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
     modImplementation("net.fabricmc:fabric-language-kotlin:${project.property("kotlin_loader_version")}")
 
-    // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
 }
 

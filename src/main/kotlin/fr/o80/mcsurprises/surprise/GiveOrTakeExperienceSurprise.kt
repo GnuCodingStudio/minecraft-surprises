@@ -1,9 +1,9 @@
-package fr.o80.testmc.surprise
+package fr.o80.mcsurprises.surprise
 
 import com.mojang.brigadier.context.CommandContext
-import fr.o80.testmc.Surprise
-import fr.o80.testmc.executeAsServer
-import fr.o80.testmc.getRandomPlayerName
+import fr.o80.mcsurprises.Surprise
+import fr.o80.mcsurprises.executeAsServer
+import fr.o80.mcsurprises.getRandomPlayerName
 import net.minecraft.server.command.ServerCommandSource
 import kotlin.random.Random
 

@@ -1,12 +1,12 @@
-package fr.o80.testmc
+package fr.o80.mcsurprises
 
 import com.mojang.brigadier.context.CommandContext
-import fr.o80.testmc.surprise.FakeHelloSurprise
-import fr.o80.testmc.surprise.GiveOrTakeExperienceSurprise
-import fr.o80.testmc.surprise.GiveSomethingSurprise
-import fr.o80.testmc.surprise.KickPlayersSurprise
-import fr.o80.testmc.surprise.SummonSurprise
-import fr.o80.testmc.surprise.TeleportSurprise
+import fr.o80.mcsurprises.surprise.FakeHelloSurprise
+import fr.o80.mcsurprises.surprise.GiveOrTakeExperienceSurprise
+import fr.o80.mcsurprises.surprise.GiveSomethingSurprise
+import fr.o80.mcsurprises.surprise.KickPlayersSurprise
+import fr.o80.mcsurprises.surprise.SummonSurprise
+import fr.o80.mcsurprises.surprise.TeleportSurprise
 import net.minecraft.server.command.ServerCommandSource
 import org.slf4j.LoggerFactory
 import java.util.Timer

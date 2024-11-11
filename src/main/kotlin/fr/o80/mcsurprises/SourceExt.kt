@@ -1,4 +1,4 @@
-package fr.o80.testmc
+package fr.o80.mcsurprises
 
 import com.mojang.brigadier.context.CommandContext
 import net.minecraft.server.command.ServerCommandSource

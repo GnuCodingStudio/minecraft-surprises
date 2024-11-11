@@ -1,9 +1,9 @@
-package fr.o80.testmc.command
+package fr.o80.mcsurprises.command
 
 import com.mojang.brigadier.Command
 import com.mojang.brigadier.context.CommandContext
-import fr.o80.testmc.StartResponse
-import fr.o80.testmc.SurpriseManager
+import fr.o80.mcsurprises.StartResponse
+import fr.o80.mcsurprises.SurpriseManager
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.Text
 import kotlin.time.Duration

@@ -1,8 +1,8 @@
-package fr.o80.testmc.surprise
+package fr.o80.mcsurprises.surprise
 
 import com.mojang.brigadier.context.CommandContext
-import fr.o80.testmc.Surprise
-import fr.o80.testmc.getRandomPlayer
+import fr.o80.mcsurprises.Surprise
+import fr.o80.mcsurprises.getRandomPlayer
 import net.minecraft.item.ItemStack
 import net.minecraft.server.command.ServerCommandSource
 

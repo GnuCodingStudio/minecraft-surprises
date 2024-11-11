@@ -1,9 +1,9 @@
-package fr.o80.testmc.surprise
+package fr.o80.mcsurprises.surprise
 
 import com.mojang.brigadier.context.CommandContext
-import fr.o80.testmc.Surprise
-import fr.o80.testmc.executeAsServer
-import fr.o80.testmc.getRandomPlayer
+import fr.o80.mcsurprises.Surprise
+import fr.o80.mcsurprises.executeAsServer
+import fr.o80.mcsurprises.getRandomPlayer
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.util.math.Vec3i
 import kotlin.math.roundToInt
