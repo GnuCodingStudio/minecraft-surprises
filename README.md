@@ -2,20 +2,19 @@
 
 ## ROADMAP
 
-- Add more lore when executing commands
-  - [ ] Kick: "L'un d'entre vous n'a pas assez facturé, nous avons du nous en séparer."
+- [x] Add more lore when executing commands
 - Add more surprises
-  - [ ] Donner un effet de potion
+  - [x] Donner un effet de potion
     - Bonus :
       - Commande : /effect give @a speed 60 2
       - Effet : Donne un effet de vitesse (Speed II) à tous les joueurs pendant 60 secondes.
     - Malus :
       - Commande : /effect give @r slowness 60 1
       - Effet : Donne un effet de lenteur (Slowness I) à un joueur aléatoire pendant 60 secondes.
-  - [ ] Téléportation aléatoire
+  - [x] Téléportation aléatoire
     - Commande : /spreadplayers ~ ~ 10 50 @a
     - Effet : Téléporte tous les joueurs dans un rayon aléatoire autour d’une position donnée (ici le centre de la carte), ce qui peut désorienter tout le monde.
-  - [ ] Changer la gravité
+  - [x] Changer la gravité
     - Commande : /effect give @a levitation 10 1
     - Effet : Donne un effet de lévitation (Levitation I) à tous les joueurs pendant 10 secondes, les faisant flotter dans les airs.
   - [ ] Modifier la difficulté

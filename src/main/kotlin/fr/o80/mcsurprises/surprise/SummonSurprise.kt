@@ -33,5 +33,7 @@ class SummonSurprise : Surprise {
             val posZ = playerPos.z.roundToInt() + position.z
             context.executeAsServer("summon $mob $posX $posY $posZ {PersistenceRequired:1,CustomName:\"Surprise\"}")
         }
+
+        context.executeAsServer("Comment ça va ${player.name} ?")
     }
 }

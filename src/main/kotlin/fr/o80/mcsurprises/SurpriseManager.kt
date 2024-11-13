@@ -5,7 +5,10 @@ import fr.o80.mcsurprises.surprise.FakeHelloSurprise
 import fr.o80.mcsurprises.surprise.GiveOrTakeExperienceSurprise
 import fr.o80.mcsurprises.surprise.GiveSomethingSurprise
 import fr.o80.mcsurprises.surprise.KickPlayersSurprise
+import fr.o80.mcsurprises.surprise.LowGravityForAllSurprise
+import fr.o80.mcsurprises.surprise.SpeedOrSlowForAllSurprise
 import fr.o80.mcsurprises.surprise.SummonSurprise
+import fr.o80.mcsurprises.surprise.TeleportEverybodySurprise
 import fr.o80.mcsurprises.surprise.TeleportSurprise
 import net.minecraft.server.command.ServerCommandSource
 import org.slf4j.LoggerFactory
@@ -20,6 +23,9 @@ private val actions = listOf(
     SummonSurprise(),
     KickPlayersSurprise(maxPlayersToKick = 2),
     GiveOrTakeExperienceSurprise(),
+    LowGravityForAllSurprise(seconds = 60),
+    SpeedOrSlowForAllSurprise(seconds = 60),
+    TeleportEverybodySurprise()
 )
 
 object SurpriseManager {

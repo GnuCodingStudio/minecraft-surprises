@@ -3,6 +3,7 @@ package fr.o80.mcsurprises.surprise
 import com.mojang.brigadier.context.CommandContext
 import fr.o80.mcsurprises.Surprise
 import fr.o80.mcsurprises.getRandomPlayer
+import fr.o80.mcsurprises.sayAsServer
 import net.minecraft.item.ItemStack
 import net.minecraft.server.command.ServerCommandSource
 
@@ -16,9 +17,11 @@ class DropInventoryItemSurprise : Surprise {
 
         inventoryItems.randomOrNull()?.let { (indexToDrop, itemToDrop) ->
             logger.info("Dropping $itemToDrop from ${player.name.string} inventory")
+            context.sayAsServer("Quelqu'un n'a pas vraiment besoin de ça: ${itemToDrop.name}")
             inventory.main[indexToDrop] = ItemStack.EMPTY
         } ?: run {
             logger.info("Lucky boy/girl ${player.name.string}.. nothing to drop in their inventory")
+            context.sayAsServer("${player.name} est déjà trop pauvre pour donner aux démunis")
         }
     }
 }
