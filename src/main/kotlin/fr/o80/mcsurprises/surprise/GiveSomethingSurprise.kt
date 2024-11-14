@@ -69,8 +69,10 @@ private val items = listOf<Pair<Item, IntProgression>>(
 
 class GiveSomethingSurprise : Surprise {
 
+    override val worldMessage: String = "C'est déjà Noël pour quelqu'un"
+
     override fun execute(context: CommandContext<ServerCommandSource>) {
-        val player = context.getRandomPlayerName()
+        val player = context.getRandomPlayerName() ?: return
         val (item, quantityRange) = items.random()
 
         context.getRandomPlayer()?.pos

@@ -20,7 +20,7 @@ import kotlin.concurrent.schedule
 import kotlin.concurrent.scheduleAtFixedRate
 import kotlin.time.Duration.Companion.minutes
 
-private val actions = listOf(
+private val surprises = listOf(
     FakeHelloSurprise(),
     TeleportSurprise(),
     GiveSomethingSurprise(),
@@ -49,19 +49,24 @@ object SurpriseManager {
         timer = Timer().also {
             it.scheduleAtFixedRate(delay, millisInterval) {
                 logger.info("Triggering random surprise action...")
-                val action = actions.random()
-
-                val worldMessage = action.worldMessage
-                if (worldMessage != null) {
-                    context.sayAsServer(worldMessage)
-                    Timer().schedule(10_000) { action.execute(context) }
-                } else {
-                    action.execute(context)
-                }
+                executeSurprise(surprises.random(), context)
             }
         }
 
         return StartResponse.STARTED
+    }
+
+    private fun executeSurprise(
+        surprise: Surprise,
+        context: CommandContext<ServerCommandSource>
+    ) {
+        val worldMessage = surprise.worldMessage
+        if (worldMessage != null) {
+            context.sayAsServer(worldMessage)
+            Timer().schedule(10_000) { surprise.execute(context) }
+        } else {
+            surprise.execute(context)
+        }
     }
 
     fun stop(): StopResponse {

@@ -21,6 +21,8 @@ private val mobs = listOf(
 
 class SummonSurprise : Surprise {
 
+    override val worldMessage: String = "Tes voisins sont super sympas !"
+
     override fun execute(context: CommandContext<ServerCommandSource>) {
         val player = context.getRandomPlayer() ?: return
         val playerPos = player.pos
@@ -33,7 +35,5 @@ class SummonSurprise : Surprise {
             val posZ = playerPos.z.roundToInt() + position.z
             context.executeAsServer("summon $mob $posX $posY $posZ {PersistenceRequired:1,CustomName:\"Surprise\"}")
         }
-
-        context.executeAsServer("Comment ça va ${player.name.string} ?")
     }
 }
