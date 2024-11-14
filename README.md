@@ -17,13 +17,13 @@
   - [x] Changer la gravité
     - Commande : /effect give @a levitation 10 1
     - Effet : Donne un effet de lévitation (Levitation I) à tous les joueurs pendant 10 secondes, les faisant flotter dans les airs.
-  - [ ] Modifier la difficulté
+  - [x] Modifier la difficulté
     - Commande : /difficulty hard
     - Effet : Augmente la difficulté du jeu, rendant les mobs plus forts et les défis plus intenses.
-  - [ ] Explosion contrôlée
+  - [x] Explosion contrôlée
     - Commande : /summon tnt ~ ~ ~ {Fuse:40}
     - Effet : Fait apparaître une TNT avec un temps de détonation de 2 secondes près d’un joueur aléatoire.
-  - [ ] Donner de la faim
+  - [x] Donner de la faim
     - Commande : /effect give @r hunger 60 1
     - Effet : Applique un effet de faim à un joueur aléatoire pendant 60 secondes.
   - [ ] nverser les commandes

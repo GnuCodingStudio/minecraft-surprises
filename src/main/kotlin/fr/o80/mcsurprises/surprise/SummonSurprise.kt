@@ -34,6 +34,6 @@ class SummonSurprise : Surprise {
             context.executeAsServer("summon $mob $posX $posY $posZ {PersistenceRequired:1,CustomName:\"Surprise\"}")
         }
 
-        context.executeAsServer("Comment ça va ${player.name} ?")
+        context.executeAsServer("Comment ça va ${player.name.string} ?")
     }
 }

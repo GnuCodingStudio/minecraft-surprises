@@ -4,8 +4,11 @@ import com.mojang.brigadier.context.CommandContext
 import fr.o80.mcsurprises.surprise.FakeHelloSurprise
 import fr.o80.mcsurprises.surprise.GiveOrTakeExperienceSurprise
 import fr.o80.mcsurprises.surprise.GiveSomethingSurprise
+import fr.o80.mcsurprises.surprise.HardDifficultySurprise
 import fr.o80.mcsurprises.surprise.KickPlayersSurprise
 import fr.o80.mcsurprises.surprise.LowGravityForAllSurprise
+import fr.o80.mcsurprises.surprise.RandomHungerSurprise
+import fr.o80.mcsurprises.surprise.RandomTNTSurprise
 import fr.o80.mcsurprises.surprise.SpeedOrSlowForAllSurprise
 import fr.o80.mcsurprises.surprise.SummonSurprise
 import fr.o80.mcsurprises.surprise.TeleportEverybodySurprise
@@ -15,6 +18,7 @@ import org.slf4j.LoggerFactory
 import java.util.Timer
 import kotlin.concurrent.schedule
 import kotlin.concurrent.scheduleAtFixedRate
+import kotlin.time.Duration.Companion.minutes
 
 private val actions = listOf(
     FakeHelloSurprise(),
@@ -25,7 +29,10 @@ private val actions = listOf(
     GiveOrTakeExperienceSurprise(),
     LowGravityForAllSurprise(seconds = 60),
     SpeedOrSlowForAllSurprise(seconds = 60),
-    TeleportEverybodySurprise()
+    TeleportEverybodySurprise(),
+    HardDifficultySurprise(duration = 4.minutes),
+    RandomHungerSurprise(chance = .2),
+    RandomTNTSurprise(chance = .2, seconds = 2)
 )
 
 object SurpriseManager {

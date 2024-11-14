@@ -3,6 +3,7 @@ package fr.o80.mcsurprises
 import com.mojang.brigadier.context.CommandContext
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.server.network.ServerPlayerEntity
+import kotlin.random.Random
 
 
 fun CommandContext<ServerCommandSource>.getRandomPlayer(): ServerPlayerEntity? =
@@ -10,6 +11,9 @@ fun CommandContext<ServerCommandSource>.getRandomPlayer(): ServerPlayerEntity? =
 
 fun CommandContext<ServerCommandSource>.getRandomPlayers(): List<ServerPlayerEntity> =
     this.source.world.players.shuffled()
+
+fun CommandContext<ServerCommandSource>.getRandomPlayers(chance: Double): List<ServerPlayerEntity> =
+    this.source.world.players.filter { Random.nextDouble(0.0, 1.0) < chance }
 
 fun CommandContext<ServerCommandSource>.getRandomPlayerName(): String? =
     this.source.world.players.randomOrNull()?.name?.string

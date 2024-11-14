@@ -18,9 +18,9 @@ class SpeedOrSlowForAllSurprise(
         Thread.sleep(3000)
         context.getRandomPlayers().forEach { player ->
             if (Random.nextInt(10) < 3) {
-                context.executeAsServer("effect give ${player.name} slowness $seconds $slowness")
+                context.executeAsServer("effect give ${player.name.string} slowness $seconds $slowness")
             } else {
-                context.executeAsServer("effect give ${player.name} speed $seconds $speed")
+                context.executeAsServer("effect give ${player.name.string} speed $seconds $speed")
             }
         }
     }

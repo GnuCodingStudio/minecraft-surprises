@@ -15,8 +15,8 @@ class TeleportSurprise : Surprise {
         val second = players.getOrNull(1)
 
         if (first != null && second != null) {
-            logger.info("Teleporting ${first.name} to ${second.name}")
-            context.sayAsServer("${first.name} est fan de ${second.name}")
+            logger.info("Teleporting ${first.name.string} to ${second.name.string}")
+            context.sayAsServer("${first.name.string} est fan de ${second.name.string}")
             context.executeAsServer("tp ${first.name.string} ${second.name.string}")
         } else {
             val missingPlayers = 2 - players.size
