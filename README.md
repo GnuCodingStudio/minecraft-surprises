@@ -29,18 +29,18 @@
   - [x] Inverser les commandes
     - Commande : /effect give @a nausea 30 1
     - Effet : Donne un effet de nausée (Nausea I) à tous les joueurs pendant 30 secondes, brouillant leur vision.
-  - [ ] Pluie de flèches
+  - [x] Pluie de flèches
     - Commande : /execute at @r run summon arrow ~ ~10 ~ {Motion:[0.0,-5.0,0.0]}
     - Effet : Fait pleuvoir une flèche depuis le ciel juste au-dessus d’un joueur aléatoire. Peut être répétée plusieurs fois pour un effet dramatique.
   - [ ] Échange d’inventaire
     - Commande : Utilise /clear, /give, et /replaceitem pour simuler un échange d’inventaire entre deux joueurs.
     - Effet : Permute les inventaires de deux joueurs aléatoires, créant la surprise et des situations amusantes.
-  - [ ] Rendre le sol glissant
+  - [x] Rendre le sol glissant
     - Commande : /effect give @a minecraft:slowness 60 100 true
     - Effet : Applique un effet de lenteur extrême, ce qui rend le déplacement presque impossible, comme si le sol était devenu glacé.
-  - [ ] Fausse mort
+  - [x] Fausse mort
     - Commande : /effect give @r minecraft:wither 2 1
     - Effet : Applique un effet Wither à un joueur aléatoire pour lui faire croire qu’il va mourir, mais l’effet est très court.
-  - [ ] Coffres surprises
-    - Commande : /give @p minecraft:chest 1
+  - [x] Coffres surprises
+    - Commande : /give @r minecraft:chest 1
     - Effet : Donne à un joueur un coffre qui contient des objets aléatoires, bons ou mauvais.

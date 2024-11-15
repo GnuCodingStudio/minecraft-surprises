@@ -22,7 +22,11 @@ private val surprises = listOf(
     HardDifficultySurprise(duration = 4.minutes),
     RandomHungerSurprise(chance = .2),
     RandomTNTSurprise(chance = .2, seconds = 2),
-    DrunkSurprise()
+    DrunkSurprise(),
+    ArrowRainSurprise(waves = 3),
+    SlippyFloorSurprise(seconds = 60),
+    FakeDeathSurprise(playersCount = 2),
+    GiveLootChestSurprise()
 )
 
 object SurpriseManager {
