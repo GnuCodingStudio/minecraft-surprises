@@ -26,7 +26,7 @@
   - [x] Donner de la faim
     - Commande : /effect give @r hunger 60 1
     - Effet : Applique un effet de faim à un joueur aléatoire pendant 60 secondes.
-  - [ ] nverser les commandes
+  - [x] Inverser les commandes
     - Commande : /effect give @a nausea 30 1
     - Effet : Donne un effet de nausée (Nausea I) à tous les joueurs pendant 30 secondes, brouillant leur vision.
   - [ ] Pluie de flèches

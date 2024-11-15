@@ -1,21 +1,10 @@
 package fr.o80.mcsurprises
 
 import com.mojang.brigadier.context.CommandContext
-import fr.o80.mcsurprises.surprise.FakeHelloSurprise
-import fr.o80.mcsurprises.surprise.GiveOrTakeExperienceSurprise
-import fr.o80.mcsurprises.surprise.GiveSomethingSurprise
-import fr.o80.mcsurprises.surprise.HardDifficultySurprise
-import fr.o80.mcsurprises.surprise.KickPlayersSurprise
-import fr.o80.mcsurprises.surprise.LowGravityForAllSurprise
-import fr.o80.mcsurprises.surprise.RandomHungerSurprise
-import fr.o80.mcsurprises.surprise.RandomTNTSurprise
-import fr.o80.mcsurprises.surprise.SpeedOrSlowForAllSurprise
-import fr.o80.mcsurprises.surprise.SummonSurprise
-import fr.o80.mcsurprises.surprise.TeleportEverybodySurprise
-import fr.o80.mcsurprises.surprise.TeleportSurprise
+import fr.o80.mcsurprises.surprise.*
 import net.minecraft.server.command.ServerCommandSource
 import org.slf4j.LoggerFactory
-import java.util.Timer
+import java.util.*
 import kotlin.concurrent.schedule
 import kotlin.concurrent.scheduleAtFixedRate
 import kotlin.time.Duration.Companion.minutes
@@ -32,7 +21,8 @@ private val surprises = listOf(
     TeleportEverybodySurprise(),
     HardDifficultySurprise(duration = 4.minutes),
     RandomHungerSurprise(chance = .2),
-    RandomTNTSurprise(chance = .2, seconds = 2)
+    RandomTNTSurprise(chance = .2, seconds = 2),
+    DrunkSurprise()
 )
 
 object SurpriseManager {
@@ -60,12 +50,16 @@ object SurpriseManager {
         surprise: Surprise,
         context: CommandContext<ServerCommandSource>
     ) {
-        val worldMessage = surprise.worldMessage
-        if (worldMessage != null) {
-            context.sayAsServer(worldMessage)
-            Timer().schedule(10_000) { surprise.execute(context) }
-        } else {
-            surprise.execute(context)
+        try {
+            val worldMessage = surprise.worldMessage
+            if (worldMessage != null) {
+                context.sayAsServer(worldMessage)
+                Timer().schedule(10_000) { surprise.execute(context) }
+            } else {
+                surprise.execute(context)
+            }
+        } catch (e: Exception) {
+            logger.error("Surprise failed while executing: ${surprise::class.simpleName}", e)
         }
     }
 
