@@ -8,6 +8,7 @@ import java.util.*
 import kotlin.concurrent.schedule
 import kotlin.concurrent.scheduleAtFixedRate
 import kotlin.time.Duration.Companion.minutes
+import kotlin.time.Duration.Companion.seconds
 
 private val surprises = listOf(
     FakeHelloSurprise(),
@@ -16,17 +17,17 @@ private val surprises = listOf(
     SummonSurprise(),
     KickPlayersSurprise(maxPlayersToKick = 2),
     GiveOrTakeExperienceSurprise(),
-    LowGravityForAllSurprise(seconds = 60),
-    SpeedOrSlowForAllSurprise(seconds = 60),
+    LowGravityForAllSurprise(duration = 60.seconds),
+    SpeedOrSlowForAllSurprise(duration = 60.seconds),
     TeleportEverybodySurprise(),
     HardDifficultySurprise(duration = 4.minutes),
     RandomHungerSurprise(chance = .2),
-    RandomTNTSurprise(chance = .2, seconds = 2),
-    DrunkSurprise(),
+    RandomTNTSurprise(chance = .2, duration = 2.seconds),
+    DrunkSurprise(duration = 30.seconds),
     ArrowRainSurprise(waves = 3),
-    SlippyFloorSurprise(seconds = 60),
-    FakeDeathSurprise(playersCount = 2),
-    GiveLootChestSurprise()
+    SlippyFloorSurprise(duration = 1.minutes),
+    FakeDeathSurprise(playersCount = 2, duration = 10.seconds),
+    // Disabled because it's not that easy : GiveLootChestSurprise()
 )
 
 object SurpriseManager {

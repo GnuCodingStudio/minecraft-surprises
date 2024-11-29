@@ -6,9 +6,10 @@ import fr.o80.mcsurprises.executeAsServer
 import fr.o80.mcsurprises.getRandomPlayers
 import net.minecraft.server.command.ServerCommandSource
 import kotlin.random.Random
+import kotlin.time.Duration
 
 class SpeedOrSlowForAllSurprise(
-    private val seconds: Int,
+    private val duration: Duration,
     private val speed: Int = 2,
     private val slowness: Int = 1
 ) : Surprise {
@@ -18,9 +19,9 @@ class SpeedOrSlowForAllSurprise(
     override fun execute(context: CommandContext<ServerCommandSource>) {
         context.getRandomPlayers().forEach { player ->
             if (Random.nextInt(10) < 3) {
-                context.executeAsServer("effect give ${player.name.string} slowness $seconds $slowness")
+                context.executeAsServer("effect give ${player.name.string} slowness ${duration.inWholeSeconds} $slowness")
             } else {
-                context.executeAsServer("effect give ${player.name.string} speed $seconds $speed")
+                context.executeAsServer("effect give ${player.name.string} speed ${duration.inWholeSeconds} $speed")
             }
         }
     }
