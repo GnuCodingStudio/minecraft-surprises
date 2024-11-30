@@ -9,9 +9,10 @@ import kotlin.random.Random
 import kotlin.time.Duration
 
 class SpeedOrSlowForAllSurprise(
-    private val duration: Duration,
-    private val speed: Int = 2,
-    private val slowness: Int = 1
+    private val speedDuration: Duration,
+    private val speedForce: Int,
+    private val slowDuration: Duration,
+    private val slowForce: Int
 ) : Surprise {
 
     override val worldMessage: String = "Serez-vous le lièvre ou la tortue ?"
@@ -19,9 +20,9 @@ class SpeedOrSlowForAllSurprise(
     override fun execute(context: CommandContext<ServerCommandSource>) {
         context.getRandomPlayers().forEach { player ->
             if (Random.nextInt(10) < 3) {
-                context.executeAsServer("effect give ${player.name.string} slowness ${duration.inWholeSeconds} $slowness")
+                context.executeAsServer("effect give ${player.name.string} slowness ${slowDuration.inWholeSeconds} $slowForce")
             } else {
-                context.executeAsServer("effect give ${player.name.string} speed ${duration.inWholeSeconds} $speed")
+                context.executeAsServer("effect give ${player.name.string} speed ${speedDuration.inWholeSeconds} $speedForce")
             }
         }
     }

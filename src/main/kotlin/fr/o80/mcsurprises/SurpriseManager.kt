@@ -17,8 +17,13 @@ private val surprises = listOf(
     SummonSurprise(),
     KickPlayersSurprise(maxPlayersToKick = 2),
     GiveOrTakeExperienceSurprise(),
-    LowGravityForAllSurprise(duration = 60.seconds),
-    SpeedOrSlowForAllSurprise(duration = 60.seconds),
+    LowGravityForAllSurprise(duration = 20.seconds),
+    SpeedOrSlowForAllSurprise(
+        speedForce = 2,
+        speedDuration = 2.minutes,
+        slowForce = 1,
+        slowDuration = 60.seconds
+    ),
     TeleportEverybodySurprise(),
     HardDifficultySurprise(duration = 4.minutes),
     RandomHungerSurprise(chance = .2),
